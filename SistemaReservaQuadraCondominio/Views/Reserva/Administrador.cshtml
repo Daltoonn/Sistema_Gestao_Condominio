@@ -1,0 +1,116 @@
+﻿@{
+    ViewData["Title"] = "Administrador - Reservas";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb; /* Fundo claro */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 900px;
+            overflow: hidden;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #0056b3; /* Azul escuro */
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #0056b3; /* Azul escuro */
+            color: #ffffff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* Linha alternada com fundo leve */
+        }
+
+        tr:hover {
+            background-color: #e6f2ff; /* Cor de destaque no hover */
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #ff4c4c; /* Vermelho para excluir */
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+            a:hover {
+                background-color: #e63946; /* Vermelho mais forte */
+                transform: translateY(-2px);
+            }
+
+            a:active {
+                background-color: #d62828; /* Vermelho ainda mais escuro */
+                transform: translateY(0);
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Reservas Cadastradas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome do Usuário</th>
+                    <th>Data e Hora de Início</th>
+                    <th>Data e Hora de Fim</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var reserva in Model)
+                {
+                    <tr>
+                        <td>@reserva.Usuario</td>
+                        <td>@reserva.DataHoraInicio</td>
+                        <td>@reserva.DataHoraFim</td>
+                        <td>
+                            <a href="/Reserva/Excluir/@reserva.Id">Excluir</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

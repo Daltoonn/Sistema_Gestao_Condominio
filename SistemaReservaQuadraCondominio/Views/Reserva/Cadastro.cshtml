@@ -1,0 +1,126 @@
+﻿@{
+    ViewData["Title"] = "Cadastro de Reserva";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb; /* Fundo claro */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            overflow: hidden;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #0056b3; /* Azul escuro */
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="datetime-local"] {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        button {
+            padding: 12px 25px;
+            background-color: #0056b3; /* Azul escuro */
+            color: white;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+            button:hover {
+                background-color: #00408f; /* Azul mais escuro */
+                transform: translateY(-2px);
+            }
+
+            button:active {
+                background-color: #003b7d; /* Azul ainda mais escuro */
+                transform: translateY(0);
+            }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 1.1rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cadastro de Reserva</h2>
+
+        <form method="post" action="/Reserva/Cadastro">
+            <div>
+                <label for="Usuario">Nome:</label>
+                <input type="text" id="Usuario" name="Usuario" required />
+            </div>
+            <div>
+                <label for="DataHoraInicio">Data e Hora de Início:</label>
+                <input type="datetime-local" id="DataHoraInicio" name="DataHoraInicio" required />
+            </div>
+            <div>
+                <label for="DataHoraFim">Data e Hora de Fim:</label>
+                <input type="datetime-local" id="DataHoraFim" name="DataHoraFim" required />
+            </div>
+            <button type="submit">Reservar</button>
+        </form>
+
+        <h3>Horários Disponíveis</h3>
+        <ul>
+            <li>Segunda a Domingo, das 7h às 23h</li>
+        </ul>
+    </div>
+</body>
+</html>

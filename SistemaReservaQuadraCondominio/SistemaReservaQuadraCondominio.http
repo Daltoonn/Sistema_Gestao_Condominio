@@ -1,0 +1,6 @@
+@SistemaReservaQuadraCondominio_HostAddress = http://localhost:5288
+
+GET {{SistemaReservaQuadraCondominio_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
