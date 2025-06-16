@@ -22,4 +22,4 @@ Este é um sistema web desenvolvido em **C# com .NET 8**, criado para **facilita
 ## 🖼️ Imagens do Sistema
 
 ### Tela Inicial
-![Tela de Login](Readme/inicial.png)
+![Tela de Login](SistemaReservaQuadraCondominio/Readme/inicial.png)
