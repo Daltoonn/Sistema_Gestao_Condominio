@@ -23,3 +23,9 @@ Este é um sistema web desenvolvido em **C# com .NET 8**, criado para **facilita
 
 ### Tela Inicial
 ![Tela de Login](SistemaReservaQuadraCondominio/Readme/inicial.png)
+
+### Tela de Reserva
+![Tela de Login](SistemaReservaQuadraCondominio/Readme/cadastro.png)
+
+### Tela de Horários
+![Tela de Login](SistemaReservaQuadraCondominio/Readme/visu.png)
